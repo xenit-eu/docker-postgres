@@ -76,7 +76,7 @@ subprojects {
     dockerFile {
         dockerFile = file("$copyDocker.destinationDir/Dockerfile")
         dockerBuild {
-            repository = 'hub.xenit.eu/postgres'
+            repository = 'xeniteu/postgres'
             tags = project.tags
             automaticTags = true
         }
