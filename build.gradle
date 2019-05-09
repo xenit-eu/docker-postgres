@@ -1,0 +1,115 @@
+plugins {
+    id "eu.xenit.docker" version "4.0.3" apply false // Have a look at the releases to find the latest one
+}
+
+project(':9.4') {
+    project.ext {
+        baseImage = 'postgres:9.4.21'
+        tags = ['9.4', '9.4.21']
+    }
+}
+
+project(':9.5') {
+    project.ext {
+        baseImage = 'postgres:9.5.16'
+        tags = ['9.5', '9.5.16']
+    }
+}
+
+project(':9.6') {
+    project.ext {
+        baseImage = 'postgres:9.6.12'
+        tags = ['9', '9.6', '9.6.12']
+    }
+}
+
+project(':10') {
+    project.ext {
+        baseImage = 'postgres:10.7'
+        tags = ['10', '10.7']
+    }
+}
+
+project(':11') {
+    project.ext {
+        baseImage = 'postgres:11.2'
+        tags = ['11', '11.2']
+    }
+}
+
+import eu.xenit.gradle.JenkinsUtil
+
+subprojects {
+
+    project.projectDir.mkdir()
+
+    project.ext {
+        pgVersion = project.projectDir.name
+    }
+
+    apply plugin: 'eu.xenit.docker'
+    apply plugin: 'java'
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+        testCompile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    sourceSets {
+        test {
+            java {
+                srcDirs "$project.parent.projectDir/src/test/java"
+            }
+        }
+    }
+
+    task copyDocker(type: Copy) {
+        from file("$project.parent.projectDir/src/main/docker")
+        into "$project.buildDir/docker"
+    }
+
+    buildDockerImage.dependsOn(copyDocker)
+
+    dockerFile {
+        dockerFile = file("$copyDocker.destinationDir/Dockerfile")
+        dockerBuild {
+            repository = 'hub.xenit.eu/postgres'
+            tags = project.tags
+            automaticTags = true
+        }
+    }
+
+    dockerCompose {
+        useComposeFiles = ["$project.parent.projectDir/src/main/compose/docker-compose.yml"]
+    }
+
+    if(!project.name.equals("11")){
+        //Disable latest and branch tags for images that have not the latests postgres version
+        for(task in pushDockerImage.finalizedBy.getDependencies(pushDockerImage)) {
+            String tag = task.imageName.split(":")[1]
+            if(tag.equals("latest") || tag.equals(JenkinsUtil.getBranch())) {
+                println("Disabling task "+ task.name)
+                task.enabled = false
+            }
+        }
+
+        project.ext {
+            installPgLogical = true
+        }
+    } else {
+        project.ext {
+            installPgLogical = false
+        }
+    }
+
+    buildDockerImage {
+        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage, 
+                     'INSTALL_PGLOGICAL': installPgLogical.toString().toUpperCase()]
+    }
+
+    dockerCompose.isRequiredBy(test)
+
+}
