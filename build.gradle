@@ -90,7 +90,7 @@ subprojects {
         //Disable latest and branch tags for images that have not the latests postgres version
         for(task in pushDockerImage.finalizedBy.getDependencies(pushDockerImage)) {
             String tag = task.imageName.split(":")[1]
-            if(tag.equals("latest") || tag.equals(JenkinsUtil.getBranch())) {
+            if(tag.equals("latest") || tag.equals("$System.env.TRAVIS_BRANCH")) {
                 println("Disabling task "+ task.name)
                 task.enabled = false
             }

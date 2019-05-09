@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+language: java
+
+script:
+  - ./gradlew check -i
+
+cache:
+  directories:
+    - $HOME/.gradle
