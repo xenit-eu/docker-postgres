@@ -78,6 +78,13 @@ subprojects {
 
     buildDockerImage.dependsOn(copyDocker)
 
+    docker {
+        registryCredentials {
+            username = System.getenv("DOCKER_USER")
+            password = System.getenv("DOCKER_PASSWORD")
+        }
+    }
+
     dockerFile {
         dockerFile = file("$copyDocker.destinationDir/Dockerfile")
         dockerBuild {
