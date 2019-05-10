@@ -33,7 +33,7 @@ project(':10') {
 project(':11') {
     project.ext {
         baseImage = 'postgres:11.2'
-        tags = ['11', '11.2']
+        tags = ['11', '11.2', 'latest']
     }
 }
 
@@ -90,7 +90,7 @@ subprojects {
         dockerBuild {
             repository = 'xeniteu/postgres'
             tags = project.tags
-            automaticTags = true
+            automaticTags = false
         }
     }
 
@@ -99,15 +99,6 @@ subprojects {
     }
 
     if(!project.name.equals("11")){
-        //Disable latest and branch tags for images that have not the latests postgres version
-        for(task in pushDockerImage.finalizedBy.getDependencies(pushDockerImage)) {
-            String tag = task.imageName.split(":")[1]
-            if(tag.equals("latest") || tag.equals("$System.env.TRAVIS_BRANCH")) {
-                println("Disabling task "+ task.name)
-                task.enabled = false
-            }
-        }
-
         project.ext {
             installPgLogical = true
         }
