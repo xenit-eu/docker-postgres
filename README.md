@@ -5,14 +5,14 @@
 ## start a postgres instance
 
 ```console
-$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d hub.xenit.eu/postgres
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d xeniteu/postgres
 ```
 
 or with docker-compose: 
 
 ```yaml
 postgresql:
-    image: hub.xenit.eu/postgres
+    image: xeniteu/postgres
     ports:
     - 5432:5432
     volumes:
@@ -75,7 +75,9 @@ Setting `PGHBAREPLACE=true` will remove the pg_hba.conf and will search for all 
 
 # Source
 
-This imageis based on [github.com/docker-library/postgres](https://github.com/docker-library/postgres/) and extends it with:
+This image is based on [github.com/docker-library/postgres](https://github.com/docker-library/postgres/) and extends it with:
 
 * pglogical
+
+Only version 11 does not include pglogical because logical replication is included in PostgreSQL.
 
