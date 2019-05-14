@@ -4,36 +4,36 @@ plugins {
 
 project(':9.4') {
     project.ext {
-        baseImage = 'postgres:9.4.21'
-        tags = ['9.4', '9.4.21']
+        baseImage = 'postgres:9.4.22'
+        tags = ['9.4', '9.4.22']
     }
 }
 
 project(':9.5') {
     project.ext {
-        baseImage = 'postgres:9.5.16'
-        tags = ['9.5', '9.5.16']
+        baseImage = 'postgres:9.5.17'
+        tags = ['9.5', '9.5.17']
     }
 }
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.12'
-        tags = ['9', '9.6', '9.6.12']
+        baseImage = 'postgres:9.6.13'
+        tags = ['9', '9.6', '9.6.13']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.7'
-        tags = ['10', '10.7']
+        baseImage = 'postgres:10.8'
+        tags = ['10', '10.8']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.2'
-        tags = ['11', '11.2', 'latest']
+        baseImage = 'postgres:11.3'
+        tags = ['11', '11.3', 'latest']
     }
 }
 
