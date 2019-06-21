@@ -98,19 +98,8 @@ subprojects {
         useComposeFiles = ["$project.parent.projectDir/src/main/compose/docker-compose.yml"]
     }
 
-    if(!project.name.equals("11")){
-        project.ext {
-            installPgLogical = true
-        }
-    } else {
-        project.ext {
-            installPgLogical = false
-        }
-    }
-
     buildDockerImage {
-        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage, 
-                     'INSTALL_PGLOGICAL': installPgLogical.toString().toUpperCase()]
+        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage]
     }
 
     dockerCompose.isRequiredBy(test)
