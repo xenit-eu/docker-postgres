@@ -8,15 +8,13 @@ ARG PGVERSION
 ARG INSTALL_PGLOGICAL
 
 # Only install pglogical if configured
-RUN if [ "${INSTALL_PGLOGICAL}" = "TRUE" ]; then \
-  apt-get update && apt-get install -y wget gnupg \
+RUN apt-get update && apt-get install -y wget gnupg \
   && echo "deb [arch=amd64] http://packages.2ndquadrant.com/pglogical/apt/ stretch-2ndquadrant main" > /etc/apt/sources.list.d/2ndquadrant.list \
   && wget --quiet -O - http://packages.2ndquadrant.com/pglogical/apt/AA7A6805.asc | apt-key add - \
   && apt-get update \
   && apt-get install -y postgresql-${PGVERSION}-pglogical \
   && apt-get remove -y wget \
-  && rm -rf /var/lib/apt/lists/* ; \
-  fi
+  && rm -rf /var/lib/apt/lists/*
 
 ENV LANG en_US.utf8
 ENV PGDATA /var/lib/postgresql/data/PGDATA

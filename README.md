@@ -78,6 +78,3 @@ Setting `PGHBAREPLACE=true` will remove the pg_hba.conf and will search for all 
 This image is based on [github.com/docker-library/postgres](https://github.com/docker-library/postgres/) and extends it with:
 
 * pglogical
-
-Only version 11 does not include pglogical because logical replication is included in PostgreSQL.
-
