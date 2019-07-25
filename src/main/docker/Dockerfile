@@ -5,14 +5,13 @@ MAINTAINER thijs.lemmens@xenit.eu
 
 ARG PGVERSION
 
-ARG INSTALL_PGLOGICAL
-
 # Only install pglogical if configured
 RUN apt-get update && apt-get install -y wget gnupg \
   && echo "deb [arch=amd64] http://packages.2ndquadrant.com/pglogical/apt/ stretch-2ndquadrant main" > /etc/apt/sources.list.d/2ndquadrant.list \
   && wget --quiet -O - http://packages.2ndquadrant.com/pglogical/apt/AA7A6805.asc | apt-key add - \
   && apt-get update \
   && apt-get install -y postgresql-${PGVERSION}-pglogical \
+  && wget -qO- https://github.com/wal-g/wal-g/releases/download/v0.2.9/wal-g.linux-amd64.tar.gz | tar zxv -C /usr/bin/ \
   && apt-get remove -y wget \
   && rm -rf /var/lib/apt/lists/*
 
