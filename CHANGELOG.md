@@ -1,5 +1,8 @@
 # Xenit PostgreSQL docker image changelog
 
+## 11.5 - 2019-08-21
+- [#12](https://github.com/xenit-eu/docker-postgres/issues/12): Update to [new maintenance release](https://www.postgresql.org/about/news/1960/)
+
 ## 11.4 - 2019-06-25
 
 - [#3](https://github.com/xenit-eu/docker-postgres/issues/3): Enable pglogical install on version 11
