@@ -1,5 +1,5 @@
 plugins {
-    id "eu.xenit.docker" version "4.0.3" apply false // Have a look at the releases to find the latest one
+    id "eu.xenit.docker" version "4.1.1" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.4') {
@@ -88,7 +88,7 @@ subprojects {
     dockerFile {
         dockerFile = file("$copyDocker.destinationDir/Dockerfile")
         dockerBuild {
-            repository = 'xeniteu/postgres'
+            repository = 'xenit/postgres'
             tags = project.tags
             automaticTags = false
         }
