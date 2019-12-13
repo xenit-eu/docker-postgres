@@ -1,9 +1,11 @@
 ARG BASEIMAGE
 
+
 FROM $BASEIMAGE
 MAINTAINER thijs.lemmens@xenit.eu
 
 ARG PGVERSION
+ARG WALGVERSION
 
 # Only install pglogical if configured
 RUN apt-get update && apt-get install -y wget gnupg \
@@ -11,7 +13,7 @@ RUN apt-get update && apt-get install -y wget gnupg \
   && wget --quiet -O - http://packages.2ndquadrant.com/pglogical/apt/AA7A6805.asc | apt-key add - \
   && apt-get update \
   && apt-get install -y postgresql-${PGVERSION}-pglogical \
-  && wget -qO- https://github.com/wal-g/wal-g/releases/download/v0.2.14/wal-g.linux-amd64.tar.gz | tar zxv -C /usr/bin/ \
+  && wget -qO- https://github.com/wal-g/wal-g/releases/download/${WALGVERSION}/wal-g.linux-amd64.tar.gz | tar zxv -C /usr/bin/ \
   && apt-get remove -y wget \
   && rm -rf /var/lib/apt/lists/*
 

@@ -45,6 +45,7 @@ subprojects {
 
     project.ext {
         pgVersion = project.projectDir.name
+        walgVersion = 'v0.2.14'
     }
 
     apply plugin: 'eu.xenit.docker'
@@ -99,7 +100,7 @@ subprojects {
     }
 
     buildDockerImage {
-        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage]
+        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage, 'WALGVERSION': project.walgVersion]
     }
 
     dockerCompose.isRequiredBy(test)
