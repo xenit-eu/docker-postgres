@@ -1,6 +1,6 @@
 # Xenit PostgreSQL docker image changelog
 
-## Unreleased
+## WAL-G support and maintenance releases - 2019-12-18
 
 - [#19](https://github.com/xenit-eu/docker-postgres/issues/19): Update to [latest maintenance releases](https://www.postgresql.org/about/news/1994/)
 - [#11](https://github.com/xenit-eu/docker-postgres/issues/11): Add support for WAL-G
