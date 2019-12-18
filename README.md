@@ -77,4 +77,5 @@ Setting `PGHBAREPLACE=true` will remove the pg_hba.conf and will search for all 
 
 This image is based on [github.com/docker-library/postgres](https://github.com/docker-library/postgres/) and extends it with:
 
-* pglogical
+* [pglogical](https://www.2ndquadrant.com/en/resources/pglogical/)
+* [WAL-G](https://github.com/wal-g/wal-g)

@@ -1,4 +1,9 @@
 .gradle/
 .idea/
+.settings/
+.project
+.vscode/
 pglogical.iml
 **/build
+**/bin
+**/.classpath

@@ -4,36 +4,36 @@ plugins {
 
 project(':9.4') {
     project.ext {
-        baseImage = 'postgres:9.4.24'
-        tags = ['9.4', '9.4.24']
+        baseImage = 'postgres:9.4.25'
+        tags = ['9.4', '9.4.25']
     }
 }
 
 project(':9.5') {
     project.ext {
-        baseImage = 'postgres:9.5.19'
-        tags = ['9.5', '9.5.19']
+        baseImage = 'postgres:9.5.20'
+        tags = ['9.5', '9.5.20']
     }
 }
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.15'
-        tags = ['9', '9.6', '9.6.15']
+        baseImage = 'postgres:9.6.16'
+        tags = ['9', '9.6', '9.6.16']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.10'
-        tags = ['10', '10.10']
+        baseImage = 'postgres:10.11'
+        tags = ['10', '10.11']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.5'
-        tags = ['11', '11.5', 'latest']
+        baseImage = 'postgres:11.6'
+        tags = ['11', '11.6', 'latest']
     }
 }
 
@@ -45,6 +45,7 @@ subprojects {
 
     project.ext {
         pgVersion = project.projectDir.name
+        walgVersion = 'v0.2.14'
     }
 
     apply plugin: 'eu.xenit.docker'
@@ -99,7 +100,7 @@ subprojects {
     }
 
     buildDockerImage {
-        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage]
+        buildArgs = ['PGVERSION': project.pgVersion, 'BASEIMAGE': project.baseImage, 'WALGVERSION': project.walgVersion]
     }
 
     dockerCompose.isRequiredBy(test)
