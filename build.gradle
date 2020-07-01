@@ -47,7 +47,7 @@ subprojects {
     }
 
     apply plugin: 'eu.xenit.docker'
-    apply plugin: 'eu.xenit.docker-compose.auto'
+    apply plugin: 'eu.xenit.docker-compose'
     apply plugin: 'java'
 
     repositories {
