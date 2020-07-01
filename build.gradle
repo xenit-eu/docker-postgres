@@ -1,50 +1,41 @@
 plugins {
-    id "eu.xenit.docker" version "4.1.1" apply false // Have a look at the releases to find the latest one
-}
-
-project(':9.4') {
-    project.ext {
-        baseImage = 'postgres:9.4.26'
-        tags = ['9.4', '9.4.26']
-    }
+    id "eu.xenit.docker" version "5.0.6" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.5') {
     project.ext {
-        baseImage = 'postgres:9.5.21'
-        tags = ['9.5', '9.5.21']
+        baseImage = 'postgres:9.5.22'
+        tags = ['9.5', '9.5.22']
     }
 }
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.17'
-        tags = ['9', '9.6', '9.6.17']
+        baseImage = 'postgres:9.6.18'
+        tags = ['9', '9.6', '9.6.18']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.12'
-        tags = ['10', '10.12']
+        baseImage = 'postgres:10.13'
+        tags = ['10', '10.13']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.7'
-        tags = ['11', '11.7']
+        baseImage = 'postgres:11.8'
+        tags = ['11', '11.8']
     }
 }
 
 project(':12') {
     project.ext {
-        baseImage = 'postgres:12.2'
-        tags = ['12', '11.2', 'latest']
+        baseImage = 'postgres:12.3'
+        tags = ['12', '12.3', 'latest']
     }
 }
-
-import eu.xenit.gradle.JenkinsUtil
 
 subprojects {
 
@@ -52,10 +43,11 @@ subprojects {
 
     project.ext {
         pgVersion = project.projectDir.name
-        walgVersion = 'v0.2.14'
+        walgVersion = 'v0.2.15'
     }
 
     apply plugin: 'eu.xenit.docker'
+    apply plugin: 'eu.xenit.docker-compose.auto'
     apply plugin: 'java'
 
     repositories {
@@ -65,7 +57,7 @@ subprojects {
 
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.11'
-        testCompile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+        testCompile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
     }
 
     sourceCompatibility = JavaVersion.VERSION_1_8
