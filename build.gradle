@@ -57,7 +57,7 @@ subprojects {
 
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.11'
-        testCompile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+        testCompile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
     }
 
     sourceCompatibility = JavaVersion.VERSION_1_8
