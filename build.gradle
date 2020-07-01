@@ -1,5 +1,5 @@
 plugins {
-    id "eu.xenit.docker" version "4.1.1" apply false // Have a look at the releases to find the latest one
+    id "eu.xenit.docker" version "5.0.6" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.4') {
@@ -44,8 +44,6 @@ project(':12') {
     }
 }
 
-import eu.xenit.gradle.JenkinsUtil
-
 subprojects {
 
     project.projectDir.mkdir()
@@ -56,6 +54,7 @@ subprojects {
     }
 
     apply plugin: 'eu.xenit.docker'
+    apply plugin: 'eu.xenit.docker-compose.auto'
     apply plugin: 'java'
 
     repositories {
