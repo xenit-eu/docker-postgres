@@ -43,7 +43,7 @@ subprojects {
 
     project.ext {
         pgVersion = project.projectDir.name
-        walgVersion = 'v0.2.14'
+        walgVersion = 'v0.2.15'
     }
 
     apply plugin: 'eu.xenit.docker'
