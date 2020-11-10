@@ -5,14 +5,14 @@
 ## start a postgres instance
 
 ```console
-$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d xeniteu/postgres
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d xenit/postgres
 ```
 
 or with docker-compose: 
 
 ```yaml
 postgresql:
-    image: xeniteu/postgres
+    image: xenit/postgres
     ports:
     - 5432:5432
     volumes:
