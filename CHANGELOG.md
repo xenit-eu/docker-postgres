@@ -1,5 +1,9 @@
 # Xenit PostgreSQL docker image changelog
 
+## 2020-11
+
+* [2020-11-14] [PR #31](https://github.com/xenit-eu/docker-postgres/issues/31) Update to [PostgreSQL 2020-11-12 release](https://www.postgresql.org/about/news/2111)
+
 ## 2020-09
 
 * [2020-09-22] [PR #29](https://github.com/xenit-eu/docker-postgres/issues/29) Update to [PostgreSQL 2020-08-13 release](https://www.postgresql.org/about/news/2060)
