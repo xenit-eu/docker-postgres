@@ -2,6 +2,7 @@
 
 ## 2020-11
 
+* [2020-11-14] [PR #32](https://github.com/xenit-eu/docker-postgres/issues/32) Add PostgreSQL 13
 * [2020-11-14] [PR #31](https://github.com/xenit-eu/docker-postgres/issues/31) Update to [PostgreSQL 2020-11-12 release](https://www.postgresql.org/about/news/2111)
 
 ## 2020-09
