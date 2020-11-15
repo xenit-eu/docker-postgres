@@ -33,7 +33,14 @@ project(':11') {
 project(':12') {
     project.ext {
         baseImage = 'postgres:12.5'
-        tags = ['12', '12.5', 'latest']
+        tags = ['12', '12.5']
+    }
+}
+
+project(':13') {
+    project.ext {
+        baseImage = 'postgres:13.1'
+        tags = ['13', '13.1', 'latest']
     }
 }
 
