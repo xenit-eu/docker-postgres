@@ -1,39 +1,39 @@
 plugins {
-    id "eu.xenit.docker" version "5.0.7" apply false // Have a look at the releases to find the latest one
+    id "eu.xenit.docker" version "5.1.0" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.5') {
     project.ext {
-        baseImage = 'postgres:9.5.23'
-        tags = ['9.5', '9.5.23']
+        baseImage = 'postgres:9.5.24'
+        tags = ['9.5', '9.5.24']
     }
 }
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.19'
-        tags = ['9', '9.6', '9.6.19']
+        baseImage = 'postgres:9.6.20'
+        tags = ['9', '9.6', '9.6.20']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.14'
-        tags = ['10', '10.14']
+        baseImage = 'postgres:10.15'
+        tags = ['10', '10.15']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.9'
-        tags = ['11', '11.9']
+        baseImage = 'postgres:11.10'
+        tags = ['11', '11.10']
     }
 }
 
 project(':12') {
     project.ext {
-        baseImage = 'postgres:12.4'
-        tags = ['12', '12.4', 'latest']
+        baseImage = 'postgres:12.5'
+        tags = ['12', '12.5', 'latest']
     }
 }
 
@@ -52,12 +52,11 @@ subprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
     }
 
     dependencies {
-        testCompile group: 'junit', name: 'junit', version: '4.11'
-        testCompile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
+        testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+        testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
     }
 
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -85,13 +84,10 @@ subprojects {
         }
     }
 
-    dockerFile {
+    dockerBuild {
         dockerFile = file("$copyDocker.destinationDir/Dockerfile")
-        dockerBuild {
-            repository = 'xenit/postgres'
-            tags = project.tags
-            automaticTags = false
-        }
+        repositories = ['xenit/postgres']
+        tags = project.tags
     }
 
     dockerCompose {
