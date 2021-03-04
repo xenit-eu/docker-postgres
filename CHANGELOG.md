@@ -1,21 +1,25 @@
 # Xenit PostgreSQL docker image changelog
 
+## 2021-03
+
+* [2021-03-04] [#34](https://github.com/xenit-eu/docker-postgres/issues/34) Update to [PostgreSQL 2021-02-11 release](https://www.postgresql.org/about/news/postgresql-132-126-1111-1016-9621-and-9525-released-2165/)
+
 ## 2020-11
 
-* [2020-11-14] [PR #32](https://github.com/xenit-eu/docker-postgres/issues/32) Add PostgreSQL 13
-* [2020-11-14] [PR #31](https://github.com/xenit-eu/docker-postgres/issues/31) Update to [PostgreSQL 2020-11-12 release](https://www.postgresql.org/about/news/2111)
+* [2020-11-14] [#32](https://github.com/xenit-eu/docker-postgres/issues/32) Add PostgreSQL 13
+* [2020-11-14] [#31](https://github.com/xenit-eu/docker-postgres/issues/31) Update to [PostgreSQL 2020-11-12 release](https://www.postgresql.org/about/news/2111)
 
 ## 2020-09
 
-* [2020-09-22] [PR #29](https://github.com/xenit-eu/docker-postgres/issues/29) Update to [PostgreSQL 2020-08-13 release](https://www.postgresql.org/about/news/2060)
+* [2020-09-22] [#29](https://github.com/xenit-eu/docker-postgres/issues/29) Update to [PostgreSQL 2020-08-13 release](https://www.postgresql.org/about/news/2060)
 
 ## 2020-07
 
-* [2020-07-01] [PR #26](https://github.com/xenit-eu/docker-postgres/issues/26) Update to [PostgreSQL 2020-05-14 release](https://www.postgresql.org/about/news/2038)
+* [2020-07-01] [#26](https://github.com/xenit-eu/docker-postgres/issues/26) Update to [PostgreSQL 2020-05-14 release](https://www.postgresql.org/about/news/2038)
 
 ## 2020-03
 
-* [2020-03-05] [PR #24](https://github.com/xenit-eu/docker-postgres/issues/24) Update to [PostgreSQL 2020-02-13 release](https://www.postgresql.org/about/news/2011)
+* [2020-03-05] [#24](https://github.com/xenit-eu/docker-postgres/issues/24) Update to [PostgreSQL 2020-02-13 release](https://www.postgresql.org/about/news/2011)
 
 
 
