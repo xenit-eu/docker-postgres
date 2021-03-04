@@ -2,6 +2,7 @@
 
 ## 2021-03
 
+* [2021-03-04] [#36](https://github.com/xenit-eu/docker-postgres/issues/36) Update [WAL-G to v0.2.19](https://github.com/wal-g/wal-g/releases/tag/v0.2.19)
 * [2021-03-04] [#34](https://github.com/xenit-eu/docker-postgres/issues/34) Update to [PostgreSQL 2021-02-11 release](https://www.postgresql.org/about/news/postgresql-132-126-1111-1016-9621-and-9525-released-2165/)
 
 ## 2020-11
