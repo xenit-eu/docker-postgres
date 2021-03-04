@@ -1,46 +1,46 @@
 plugins {
-    id "eu.xenit.docker" version "5.1.0" apply false // Have a look at the releases to find the latest one
+    id "eu.xenit.docker" version "5.2.0" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.5') {
     project.ext {
-        baseImage = 'postgres:9.5.24'
-        tags = ['9.5', '9.5.24']
+        baseImage = 'postgres:9.5.25'
+        tags = ['9.5', '9.5.25']
     }
 }
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.20'
-        tags = ['9', '9.6', '9.6.20']
+        baseImage = 'postgres:9.6.21'
+        tags = ['9', '9.6', '9.6.21']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.15'
-        tags = ['10', '10.15']
+        baseImage = 'postgres:10.16'
+        tags = ['10', '10.16']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.10'
-        tags = ['11', '11.10']
+        baseImage = 'postgres:11.11'
+        tags = ['11', '11.11']
     }
 }
 
 project(':12') {
     project.ext {
-        baseImage = 'postgres:12.5'
-        tags = ['12', '12.5']
+        baseImage = 'postgres:12.6'
+        tags = ['12', '12.6']
     }
 }
 
 project(':13') {
     project.ext {
-        baseImage = 'postgres:13.1'
-        tags = ['13', '13.1', 'latest']
+        baseImage = 'postgres:13.2'
+        tags = ['13', '13.2', 'latest']
     }
 }
 
