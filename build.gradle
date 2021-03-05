@@ -50,7 +50,7 @@ subprojects {
 
     project.ext {
         pgVersion = project.projectDir.name
-        walgVersion = 'v0.2.15'
+        walgVersion = 'v0.2.19'
     }
 
     apply plugin: 'eu.xenit.docker'
@@ -62,8 +62,8 @@ subprojects {
     }
 
     dependencies {
-        testImplementation group: 'junit', name: 'junit', version: '4.13.1'
-        testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
+        testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+        testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
     }
 
     sourceCompatibility = JavaVersion.VERSION_1_8
