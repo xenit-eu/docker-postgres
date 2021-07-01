@@ -11,36 +11,36 @@ project(':9.5') {
 
 project(':9.6') {
     project.ext {
-        baseImage = 'postgres:9.6.21'
-        tags = ['9', '9.6', '9.6.21']
+        baseImage = 'postgres:9.6.22'
+        tags = ['9', '9.6', '9.6.22']
     }
 }
 
 project(':10') {
     project.ext {
-        baseImage = 'postgres:10.16'
-        tags = ['10', '10.16']
+        baseImage = 'postgres:10.17'
+        tags = ['10', '10.17']
     }
 }
 
 project(':11') {
     project.ext {
-        baseImage = 'postgres:11.11'
-        tags = ['11', '11.11']
+        baseImage = 'postgres:11.12'
+        tags = ['11', '11.12']
     }
 }
 
 project(':12') {
     project.ext {
-        baseImage = 'postgres:12.6'
-        tags = ['12', '12.6']
+        baseImage = 'postgres:12.7'
+        tags = ['12', '12.7']
     }
 }
 
 project(':13') {
     project.ext {
-        baseImage = 'postgres:13.2'
-        tags = ['13', '13.2', 'latest']
+        baseImage = 'postgres:13.3'
+        tags = ['13', '13.3', 'latest']
     }
 }
 
