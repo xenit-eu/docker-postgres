@@ -1,5 +1,5 @@
 plugins {
-    id "eu.xenit.docker" version "5.2.0" apply false // Have a look at the releases to find the latest one
+    id "eu.xenit.docker" version "5.3.0" apply false // Have a look at the releases to find the latest one
 }
 
 project(':9.5') {
